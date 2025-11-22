@@ -1,0 +1,25 @@
+models:
+- name: student_report
+  description: This model provides a comprehensive report on students' academic performance,
+    including their GPA, total credits earned, and courses taken. It aggregates data
+    from the student data source for students who enrolled on or after January 1,
+    2025, and organizes it by student name and course start date. The report is sorted
+    by GPA, total credits, and student name.
+  columns:
+  - name: student_name
+    description: The name of the student.
+    data_tests:
+      - not_null
+  - name: course_started
+    description: The date when the student started the course.
+  - name: gpa
+    description: The average grade points achieved by the student.
+  - name: total_credits
+    description: The total number of credits earned by the student.
+  - name: total_courses
+    description: The total number of courses taken by the student.
+  - name: courses_taken
+    description: A list of course titles taken by the student, separated by commas.
+  - name: instructors
+    description: A list of instructors for the courses taken by the student, separated
+      by commas.
