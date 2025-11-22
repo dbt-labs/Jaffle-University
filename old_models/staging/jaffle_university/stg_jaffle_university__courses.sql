@@ -1,6 +1,4 @@
-with 
-
-source as (
+with source as (
 
     select * from {{ source('jaffle_university', 'courses') }}
 
@@ -9,9 +7,9 @@ source as (
 renamed as (
 
     select
-        id,
-        code,
-        title,
+        id as course_id,
+        code as course_code,
+        title as course_title,
         dept_id,
         credits
 
