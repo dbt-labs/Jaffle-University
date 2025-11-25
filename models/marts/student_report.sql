@@ -27,7 +27,7 @@ from
             else 0.0
         end as grade_points,
         month(e.enroll_date)::string || '-' || year(e.enroll_date)::string as course_started
-    from raw.jaffle_university.instructors as i
+    from {{ ref('stg_jaffle_university__instructors') }} as i
     join raw.jaffle_university.departments as d on i.dept_id = d.id
     join raw.jaffle_university.enrollments as e on i.id = e.instructor_id
     join raw.jaffle_university.courses as c on e.course_id = c.id
