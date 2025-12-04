@@ -3,6 +3,14 @@ sources:
     database: raw
     tables:
       - name: courses
+        columns:
+          - name: id
+            description: the primary key for courses
+            data_tests:
+              - unique
+              - not_null
+        
+        
       - name: departments
       - name: enrollments
       - name: instructors
